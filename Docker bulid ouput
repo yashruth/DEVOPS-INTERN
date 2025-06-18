@@ -1,0 +1,25 @@
+[+] Building 3.5s (13/13) FINISHED                                                                 docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                               0.1s
+ => => transferring dockerfile: 440B                                                                               0.0s
+ => [internal] load metadata for docker.io/library/python:3.13-slim                                                2.5s
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load build context                                                                                  0.0s
+ => => transferring context: 92B                                                                                   0.0s
+ => [builder 1/6] FROM docker.io/library/python:3.13-slim@sha256:f2fdaec50160418e0c2867ba3e254755edd067171725886d  0.1s
+ => => resolve docker.io/library/python:3.13-slim@sha256:f2fdaec50160418e0c2867ba3e254755edd067171725886d5d303fd7  0.1s
+ => CACHED [builder 2/6] WORKDIR /app                                                                              0.0s
+ => CACHED [builder 3/6] RUN pip install uv                                                                        0.0s
+ => CACHED [builder 4/6] COPY pyproject.toml uv.lock ./                                                            0.0s
+ => CACHED [builder 5/6] RUN uv sync --frozen                                                                      0.0s
+ => CACHED [builder 6/6] COPY server.py .                                                                          0.0s
+ => CACHED [stage-1 3/4] COPY --from=builder /app/.venv .venv                                                      0.0s
+ => CACHED [stage-1 4/4] COPY --from=builder /app/server.py .                                                      0.0s
+ => exporting to image                                                                                             0.4s
+ => => exporting layers                                                                                            0.0s
+ => => exporting manifest sha256:c166098e4cab998f1b880c2f7e0419e0ed45feb9413caaadcb3c634fd2f49f4b                  0.0s
+ => => exporting config sha256:a5718a9fdb40967dfeb5f259736b83ac3b23c2fbb505142e34c299bd077c41ff                    0.0s
+ => => exporting attestation manifest sha256:5cac1916fde2fc62f52b81c10c814cfbd92f21c3304c9c0969d9d1dd772442aa      0.1s
+ => => exporting manifest list sha256:fd92b5a476032c92110c3d833a1ae8c2a006c065670297e548505a1e3f5e5505             0.1s
+ => => naming to docker.io/library/devops-internship-assignment:latest                                             0.0s
+ => => unpacking to docker.io/library/devops-internship-assignment:latest                                          0.0s
